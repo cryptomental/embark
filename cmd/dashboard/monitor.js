@@ -359,6 +359,7 @@ class Monitor {
   submitCmd(cmd) {
     if (cmd !== '') {
       this.history.addCommand(cmd);
+      this.history.saveToHistoryFile(cmd);
       this.executeCmd(cmd);
     }
     this.input.clearValue();
